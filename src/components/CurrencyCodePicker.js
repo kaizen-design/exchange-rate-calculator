@@ -7,7 +7,7 @@ export function CurrencyCodePicker({
   const dispatch = useDispatch();
   function onChange(e) {
     dispatch({
-      type: 'currencyCodeChanged',
+      type: 'rates/currencyCodeChanged',
       payload: e.target.value
     })
   }
