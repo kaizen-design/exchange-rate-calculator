@@ -2,7 +2,7 @@ import { getExchangeRates } from "../api";
 import { store } from "./store";
 
 const initialState = {
-  amount: "12.80",
+  amount: "12.89",
   currencyCode: "USD",
   currencyData: { USD: 1.0 }
 }
@@ -51,3 +51,10 @@ export function changeCurrencyCode(currencyCode) {
     });
   }
 } 
+
+//  Thunks
+export function getInitialRates(dispatch, getState) {
+  const state = getState();
+  const currencyCode = getCurrencyCode(state);
+  dispatch(changeCurrencyCode(currencyCode));
+}
